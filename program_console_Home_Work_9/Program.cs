@@ -9,7 +9,7 @@ double MultiplicityNumbers(double num1, double num2)
     if (num1 % num2 == 0)
     {
         System.Console.WriteLine("кратно");
-        System. Environment. Exit(0);
+        System.Environment.Exit(0);
     }
     else
     {
@@ -20,4 +20,4 @@ double MultiplicityNumbers(double num1, double num2)
 
 double numbersMultiplicity = MultiplicityNumbers(numberA, numberB);
 System.Console.Write("не кратно, остаток ");
-System.Console.Write(numbersMultiplicity);
+System.Console.WriteLine(numbersMultiplicity);
