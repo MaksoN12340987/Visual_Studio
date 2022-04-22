@@ -12,10 +12,11 @@
 void PrintArray(int[] collectionPrint)
 {
     int lengntPrint = collectionPrint.Length;
-    int indexPrint = 0;
+    int indexFill = 0;
     while (indexFill < lengntPrint)
     {
-        
+        System.Console.WriteLine(collectionPrint[indexFill]);
+        indexFill++;
     }
 }
 
