@@ -1,44 +1,50 @@
-﻿System.Console.WriteLine("One numbers");
-int n = 4;
+﻿System.Console.Write("Enter n: ");
+int n = Convert.ToInt32(System.Console.ReadLine());
+System.Console.WriteLine();
 int[] array = new int[n];
 
-System.Console.WriteLine(array[5]);
+void ArrayFull(int[] collection)
+{
+    int index = 0;
+    int lenght = n;
+    int[] mas = new int[lenght];;
+    while (index < n)
+    {
+        collection[index] = (collection[index] + index) + 1;
+        index++;
+    }
+}
 
-array[0] = 1;
+// Добавил метод PrintArray только для проверки элементов массива
+void PrintArray(int[] collectionPrint)
+{
+    int lengntPrint = collectionPrint.Length;
+    int indexFill = 0;
+    while (indexFill < lengntPrint)
+    {
+        System.Console.WriteLine(collectionPrint[indexFill]);
+        indexFill++;
+    }
+}
 
-// int index = 1;
-// while (index < n)
-// {
-//     if (array[n] > array[index])
-//     {
-//         array[index]++;
-//     }
-//     index++;
-// }
+void EvenNumbersArray(int[] numbersPrint)
+{
+    int lengntEven = numbersPrint.Length;
+    int indexEven = 0;
+    while (indexEven < lengntEven)
+    {
+        if (numbersPrint[indexEven] % 2 == 0)
+        {
+            System.Console.WriteLine(numbersPrint[indexEven]);
+            indexEven++;
+        }
+        else
+        {
+            indexEven++;
+        }
+    }
+}
 
-// int ArrayFull(int[] collection)
-// {
-//     int index = 1;
-//     while (index < n)
-//     {
-//         array[index]++;
-//         index++;
-//     }
-// }
-
-// int[] Array = new int[n];
-// Array = ArrayFull(array);
-
-System.Console.WriteLine(array[2]);
-
-// int ParityNumber(int[] collection)
-// {
-//     int index = 0;
-//     int lenght = array.Length;
-//     int[] parityNumbers = {0};
-//     while (index < lenght)
-//     {
-
-//     }
-// }
-
+ArrayFull(array);
+// PrintArray(array);
+EvenNumbersArray(array);
