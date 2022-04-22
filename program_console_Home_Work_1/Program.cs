@@ -1,4 +1,4 @@
-﻿int[] array = {563, 98};
+﻿int[] array = { 563, 98 };
 
 int MinElement(int[] collection)
 {
@@ -7,11 +7,11 @@ int MinElement(int[] collection)
     int lenght = array.Length;
     while (index < lenght)
     {
-        if (array[index]<min)
-    {
-        min = array[index];
-    }
-    index++;
+        if (array[index] < min)
+        {
+            min = array[index];
+        }
+        index++;
     }
     return min;
 }
@@ -23,11 +23,11 @@ int MaxElement(int[] collection)
     int lenght = array.Length;
     while (index < lenght)
     {
-    if (array[index]>max)
-    {
-        max = array[index];
-    }
-    index++;
+        if (array[index] > max)
+        {
+            max = array[index];
+        }
+        index++;
     }
     return max;
 }

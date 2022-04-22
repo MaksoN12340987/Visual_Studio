@@ -9,12 +9,12 @@ void Мultiple(int multiplesA, int multiplesB)
     if ((multiplesA * multiplesA) == multiplesB)
     {
         System.Console.WriteLine("The first number is the square of the second");
-        System. Environment. Exit(0);
+        System.Environment.Exit(0);
     }
     if ((multiplesB * multiplesB) == multiplesA)
     {
         System.Console.WriteLine("The second number is the square of the first");
-        System. Environment. Exit(0);
+        System.Environment.Exit(0);
     }
     else
     {

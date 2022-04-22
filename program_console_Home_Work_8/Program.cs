@@ -4,11 +4,11 @@ int a = Convert.ToInt32(System.Console.ReadLine());
 int RangeThird(int range)
 {
     int ok = range;
-    if (range > 99 & range < 1000);
+    if (range > 99 & range < 1000) ;
     else
     {
         System.Console.WriteLine("Ошибка, введите число из 3х знаков");
-        System. Environment. Exit(0);
+        System.Environment.Exit(0);
     }
     return ok;
 }

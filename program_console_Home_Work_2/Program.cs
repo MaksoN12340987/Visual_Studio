@@ -1,4 +1,4 @@
-﻿int[] array = {2, 3, 7};
+﻿int[] array = { 2, 3, 7 };
 
 int MaxElement(int[] collection)
 {
@@ -7,11 +7,11 @@ int MaxElement(int[] collection)
     int lenght = array.Length;
     while (index < lenght)
     {
-    if (array[index]>max)
-    {
-        max = array[index];
-    }
-    index++;
+        if (array[index] > max)
+        {
+            max = array[index];
+        }
+        index++;
     }
     return max;
 }

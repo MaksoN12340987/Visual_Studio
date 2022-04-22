@@ -7,7 +7,7 @@ void ArrayFull(int[] collection)
 {
     int index = 0;
     int lenght = collection.Length;
-    int[] mas = new int[lenght];;
+    int[] mas = new int[lenght]; ;
     while (index < lenght)
     {
         collection[index] = (collection[index] + index) + 1;

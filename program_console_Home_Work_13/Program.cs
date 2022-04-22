@@ -2,13 +2,22 @@
 int number = Convert.ToInt32(Console.ReadLine());
 System.Console.WriteLine();
 
+int Positive(int pos)
+{
+    if (pos < 0)
+    {
+        pos = pos * -1;
+    }
+    return pos;
+}
+
 int ThirdNumber(int third)
 {
     int save = 0;
     int range = 1000;
     int coll = 0;
     int collend = 0;
-    int threeNumbers =100;
+    int threeNumbers = 100;
     if (third < 100)
     {
         System.Console.WriteLine("No third digit");
@@ -34,5 +43,6 @@ int ThirdNumber(int third)
     return save;
 }
 
-int third = ThirdNumber(number);
+int positive = Positive(number);
+int third = ThirdNumber(positive);
 System.Console.WriteLine(third);

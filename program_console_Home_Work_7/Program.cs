@@ -18,7 +18,7 @@ int GreatestNumber(int number)
     {
         return saveTwo;
     }
-    
+
 }
 
 int temporary = NumberRandom(greatest);

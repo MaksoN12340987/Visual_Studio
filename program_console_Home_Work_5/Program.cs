@@ -21,7 +21,7 @@ void ArrayFull(int[] collection)
         }
         if (save > 0)
         {
-            
+
             collection[indexFill] = collection[indexFill] + save;
             indexFill++;
             save++;
