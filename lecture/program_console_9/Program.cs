@@ -1,7 +1,7 @@
 ﻿void FillArray(int[] collectionFill)
 {
     int lengntFill = collection.Length;
-    int indexFill = 0;
+    int index = 0;
     while (indexFill < lengntFill)
     {
         collection[indexFill] = new Random().Next(1, 10);
