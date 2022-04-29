@@ -37,7 +37,7 @@ void SquareNumber(int[] mas)
 {
     for (int i = 0; i < mas.Length; i++)
     {
-        mas[i] = System.Convert.ToInt32(System.Math.Pow(mas[i], 2));
+        mas[i] = System.Convert.ToInt32(System.Math.Pow(mas[i], 3));
     }
 }
 
