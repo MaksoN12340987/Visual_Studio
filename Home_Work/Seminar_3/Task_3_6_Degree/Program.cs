@@ -43,11 +43,11 @@ void ArrayFull(int[] collection)
     }
 }
 
-void PrintArray(int[] collectionPrint)
+void PrintArray(int[] print)
 {
-    for (int i = 0; i < collectionPrint.Length; i++)
+    for (int i = 0; i < print.Length; i++)
     {
-        System.Console.WriteLine(collectionPrint[i]);
+        System.Console.Write($"{print[i]}, ");
     }
 }
 
