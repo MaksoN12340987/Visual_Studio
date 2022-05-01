@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿// 8. Найти сумму чисел одномерного массива стоящих на нечетной позиции
+// 8. Найти сумму чисел одномерного массива стоящих на нечетной позиции
 
 string coll = "Specify the number of elements in the array";
 
@@ -51,7 +50,3 @@ FullArray(array);
 PrintArray(array);
 System.Console.WriteLine();
 System.Console.WriteLine(SumOddPosition(array));
-=======
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
->>>>>>> 0002a33cf44acde3d4f1cb611cce5a150d7b5da7
