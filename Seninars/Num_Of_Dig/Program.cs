@@ -1,9 +1,7 @@
-﻿// Напишите программу, которая принимает число и проверяет, является ли оно палиндромом.
+﻿// Поиск количества цифр в числе.
 
 System.Console.Write("enter the number:");
 int number = Convert.ToInt32(Console.ReadLine());
-
-
 
 int NumOfDig(int n)
 {
