@@ -37,16 +37,5 @@ int SumOddPosition(int[] mas)
     return sum;
 }
 
-void PrintArray(int[] print)
-{
-    for (int i = 0; i < print.Length; i++)
-    {
-        System.Console.Write($"{print[i]} ");
-    }
-}
-
-int[] array = new int[GetValue(coll)];
-FullArray(array);
-PrintArray(array);
 System.Console.WriteLine();
 System.Console.WriteLine(SumOddPosition(array));
