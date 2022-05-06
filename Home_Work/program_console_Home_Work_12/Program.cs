@@ -4,7 +4,7 @@ System.Console.WriteLine();
 
 void NumbeThree(int third)
 {
-    if (third > 99) ;
+    if (third > 99){}
     else
     {
         System.Console.WriteLine("enter a number greater than 99");

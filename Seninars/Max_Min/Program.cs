@@ -17,6 +17,9 @@
             }
         }
     }
-    total =$"Maximum element: {max}, Minimal element: {min}";
+    total = $"Maximum element: {max}, Minimal element: {min}";
     return total;
 }
+
+int[] array = { 1, 6, 6, 9, 7, -3 };
+System.Console.WriteLine(MaxMinElement(array));

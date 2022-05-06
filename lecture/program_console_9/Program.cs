@@ -1,10 +1,10 @@
 ﻿void FillArray(int[] collectionFill)
 {
-    int lengntFill = collection.Length;
-    int index = 0;
+    int lengntFill = collectionFill.Length;
+    int indexFill = 0;
     while (indexFill < lengntFill)
     {
-        collection[indexFill] = new Random().Next(1, 10);
+        collectionFill[indexFill] = new Random().Next(1, 10);
         indexFill++;
     }
 }
@@ -21,3 +21,5 @@ void PrintArray(int[] collectionPrint)
 }
 
 int[] array = new int[10];
+FillArray(array);
+PrintArray(array);
