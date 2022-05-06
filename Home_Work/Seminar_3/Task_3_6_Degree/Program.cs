@@ -4,8 +4,8 @@
 // 6. Напишите программу, которая принимает на вход число (N) 
 // и выдаёт таблицу кубов чисел от 1 до N
 
-string enterNumber = String.Empty;
-string enterDegree = String.Empty;
+string enterNumber = "";
+string enterDegree = "";
 
 int GetValue(string text)
 {
