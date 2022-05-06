@@ -26,15 +26,32 @@ int GetValueNullNatural(string text)
 
 void FillArray(int[] collection)
 {
-    int index = 0;
-    int lenght = collection.Length;
-    int[] mas = new int[lenght]; ;
-    while (index < lenght)
+    for (int i = 0; i < collection.Length; i++)
     {
-        collection[index] = (collection[index] + index) + 1;
-        index++;
+        collection[i] = (collection[i] + i) + 1;
     }
+}
+
+int SumElements(int[] mas)
+{
+    int sum = 0;
+    for (int i = 0; i < mas.Length; i++)
+    {
+        sum += mas[i];
+    }
+    return sum;
 }
 
 int[] array = new int[GetValueNullNatural(enterMas)];
 FillArray(array);
+PrintArray(array);
+System.Console.WriteLine();
+System.Console.WriteLine(SumElements(array));
+
+void PrintArray(int[] print)
+{
+    for (int i = 0; i < print.Length; i++)
+    {
+        System.Console.Write($"{print[i]} ");
+    }
+}
