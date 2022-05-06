@@ -134,7 +134,7 @@ double MinElement(double[] collection)
     return min;
 }
 
-if (value < 4)
+while (value != 4)
 {
     if (value == 1)
     {
@@ -160,11 +160,10 @@ if (value < 4)
         System.Console.WriteLine();
         System.Console.WriteLine((MaxElement(array)) - (MinElement(array)));
     }
+    value = System.Convert.ToInt32(GetValueOptions(enterValue));
 }
-else
-{
-    System.Console.WriteLine("Thank you!");
-}
+
+System.Console.WriteLine("Thank you!");
 
 void PrintArray(int[] print)
 {
