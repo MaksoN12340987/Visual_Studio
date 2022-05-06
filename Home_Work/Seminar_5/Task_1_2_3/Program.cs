@@ -158,7 +158,7 @@ if (value < 4)
         FillArrayMaterial(array, -100, 100);
         PrintArrayMaterial(array);
         System.Console.WriteLine();
-        System.Console.WriteLine((MaxElement(array))-(MinElement(array)));
+        System.Console.WriteLine((MaxElement(array)) - (MinElement(array)));
     }
 }
 else
