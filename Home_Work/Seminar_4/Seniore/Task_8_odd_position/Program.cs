@@ -16,7 +16,7 @@ int GetValue(string text)
     return value;
 }
 
-void FullArray(int[] full)
+void FillArray(int[] full)
 {
     for (int i = 0; i < full.Length; i++)
     {
@@ -29,7 +29,7 @@ int SumOddPosition(int[] mas)
     int sum = 0;
     for (int i = 0; i < mas.Length; i++)
     {
-        if ((i % 2) != 0)
+        if (i % 2 != 0)
         {
             sum = sum + mas[i];
         }
@@ -37,5 +37,16 @@ int SumOddPosition(int[] mas)
     return sum;
 }
 
+void PrintArray(int[] print)
+{
+    for (int i = 0; i < print.Length; i++)
+    {
+        System.Console.Write($"{print[i]} ");
+    }
+}
+
+int[] array = new int[GetValue(coll)];
+FillArray(array);
+PrintArray(array);
 System.Console.WriteLine();
 System.Console.WriteLine(SumOddPosition(array));

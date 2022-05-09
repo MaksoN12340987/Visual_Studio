@@ -1,7 +1,7 @@
 ﻿System.Console.Write("Enter n: ");
-int n = Convert.ToInt32(System.Console.ReadLine());
+int n = Convert.ToInt32(System.Console.ReadLine()!);
 System.Console.WriteLine();
-int[] array = new int[n];
+int[] array = new int[n]!;
 
 void ArrayFull(int[] collection)
 {
@@ -12,18 +12,6 @@ void ArrayFull(int[] collection)
     {
         collection[index] = (collection[index] + index) + 1;
         index++;
-    }
-}
-
-// Добавил метод PrintArray только для проверки элементов массива
-void PrintArray(int[] collectionPrint)
-{
-    int lengntPrint = collectionPrint.Length;
-    int indexFill = 0;
-    while (indexFill < lengntPrint)
-    {
-        System.Console.WriteLine(collectionPrint[indexFill]);
-        indexFill++;
     }
 }
 
@@ -46,5 +34,4 @@ void EvenNumbersArray(int[] numbersPrint)
 }
 
 ArrayFull(array);
-// PrintArray(array);
 EvenNumbersArray(array);

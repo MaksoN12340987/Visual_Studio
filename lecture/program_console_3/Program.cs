@@ -3,10 +3,10 @@
 // double number2 = new Random().Next(1, 100);
 // System.Console.WriteLine(number2);
 System.Console.WriteLine("Введите первое число");
-var numberFirst = System.Console.ReadLine();
+string numberFirst = System.Console.ReadLine()!;
 System.Console.WriteLine("Введите второе число");
-var numberSecond = System.Console.ReadLine();
+string numberSecond = System.Console.ReadLine()!;
 
-int number1 = numberFirst;
-int number2 = numberSecond;
+int number1 = System.Convert.ToInt32(numberFirst);
+int number2 = System.Convert.ToInt32(numberSecond);
 System.Console.WriteLine(number1 / number2);

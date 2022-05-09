@@ -15,7 +15,7 @@ int GetValue(string text)
     while (!correct)
     {
         System.Console.Write("Enter the number: ");
-        getValue = System.Console.ReadLine();
+        getValue = System.Console.ReadLine()!;
         correct = int.TryParse(getValue, out value);
     }
     return value;
@@ -29,7 +29,7 @@ int GetValueDegree(string text)
     while (!correct)
     {
         System.Console.Write("Enter degree: ");
-        getValue = System.Console.ReadLine();
+        getValue = System.Console.ReadLine()!;
         correct = int.TryParse(getValue, out value);
     }
     return value;
