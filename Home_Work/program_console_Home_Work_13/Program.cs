@@ -32,9 +32,6 @@ int ThirdNumber(int third)
         while (third > range)
         {
             if (third < (range * 10))
-            // 12345654987
-            // 10000000000
-            // 10000 / 100
             {
                 coll = range;
             }
