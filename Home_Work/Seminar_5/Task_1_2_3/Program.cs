@@ -134,6 +134,22 @@ double MinElement(double[] collection)
     return min;
 }
 
+void PrintArray(int[] print)
+{
+    for (int i = 0; i < print.Length; i++)
+    {
+        System.Console.Write($"{print[i]} ");
+    }
+}
+
+void PrintArrayMaterial(double[] print)
+{
+    for (int i = 0; i < print.Length; i++)
+    {
+        System.Console.Write($"{print[i]} ");
+    }
+}
+
 while (value != 4)
 {
     if (value == 1)
@@ -164,19 +180,3 @@ while (value != 4)
 }
 
 System.Console.WriteLine("Thank you!");
-
-void PrintArray(int[] print)
-{
-    for (int i = 0; i < print.Length; i++)
-    {
-        System.Console.Write($"{print[i]} ");
-    }
-}
-
-void PrintArrayMaterial(double[] print)
-{
-    for (int i = 0; i < print.Length; i++)
-    {
-        System.Console.Write($"{print[i]} ");
-    }
-}
