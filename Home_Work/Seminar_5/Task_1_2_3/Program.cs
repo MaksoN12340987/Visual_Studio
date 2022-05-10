@@ -150,31 +150,41 @@ void PrintArrayMaterial(double[] print)
     }
 }
 
+
 while (value != 4)
 {
     if (value == 1)
     {
+        DateTime start = DateTime.Now;
         int[] array = new int[coll];
         FillArray(array, 100, 999);
         PrintArray(array);
         System.Console.WriteLine();
         System.Console.WriteLine(PositiveNumbers(array));
+        double running = (DateTime.Now - start).TotalMilliseconds;
+        System.Console.WriteLine($"Program_running_time: {running}");
     }
     if (value == 2)
     {
+        DateTime start = DateTime.Now;
         int[] array = new int[coll];
         FillArray(array, 1, 999);
         PrintArray(array);
         System.Console.WriteLine();
         System.Console.WriteLine(SumOddPosition(array));
+        double running = (DateTime.Now - start).TotalMilliseconds;
+        System.Console.WriteLine($"Program_running_time: {running}");
     }
     if (value == 3)
     {
+        DateTime start = DateTime.Now;
         double[] array = new double[coll];
         FillArrayMaterial(array, -100, 100);
         PrintArrayMaterial(array);
         System.Console.WriteLine();
         System.Console.WriteLine((MaxElement(array)) - (MinElement(array)));
+        double running = (DateTime.Now - start).TotalMilliseconds;
+        System.Console.WriteLine($"Program_running_time: {running}");
     }
     value = System.Convert.ToInt32(GetValueOptions(enterValue));
 }
