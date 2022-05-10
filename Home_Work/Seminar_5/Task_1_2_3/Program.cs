@@ -61,9 +61,6 @@ int GetValueOptions(string text)
     return value;
 }
 
-int coll = System.Convert.ToInt32(GetValueNullNatural(enterMas));
-int value = System.Convert.ToInt32(GetValueOptions(enterValue));
-
 void FillArray(int[] arrayFill, int arg1, int arg2)
 {
     arg2++;
@@ -151,6 +148,8 @@ void PrintArrayMaterial(double[] print)
 }
 
 
+int coll = System.Convert.ToInt32(GetValueNullNatural(enterMas));
+int value = System.Convert.ToInt32(GetValueOptions(enterValue));
 while (value != 4)
 {
     if (value == 1)
