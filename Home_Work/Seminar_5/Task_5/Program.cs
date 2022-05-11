@@ -39,5 +39,6 @@ double ObtainingDegree(double number,double degree)
     return number;
 }
 
+double result = Math.Pow(GetValueNullNatural(enter), GetValueNullNatural(valueEnter));
 System.Console.WriteLine(ObtainingDegree(GetValueNullNatural(enter), GetValueNullNatural(valueEnter)));
-System.Console.WriteLine(Math.Abs(GetValueNullNatural(enter), GetValueNullNatural(valueEnter)));
+System.Console.WriteLine();
