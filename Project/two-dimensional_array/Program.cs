@@ -23,12 +23,26 @@ int GetValueNullNatural(string text)
     return value;
 }
 
-int FillTwoArray(int[,] collection)
+void CreateTwoDimensionalArray(int[,] massive)
 {
-    int line =0;
-    int column=0;
-    for (int i = 0; i < collection.Length; i++)
+     = 0;
+    int line = 0;
+    int constant = 1;
+    for (int coll = 0; coll < column; coll++)
     {
-        
+        for (int i = 0; i < column; i++)
+        {
+            collection[i, line] += constant;
+        }
     }
 }
+
+void PrintTwoArray(int[,] colleclion)
+{
+    int indexColumn = 0;
+
+}
+
+CreateTwoDimensionalArray(GetValueNullNatural(enterN), GetValueNullNatural(enterM));
+
+int[,] array = 
