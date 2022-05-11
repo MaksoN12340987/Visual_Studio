@@ -1,5 +1,5 @@
-﻿string enterMas = "Specify the number of elements in the array";
-string enterValue = "";
+﻿string enterN = "specify the number of array rows";
+string enterM = "specify the number of array columns";
 
 int GetValueNullNatural(string text)
 {
@@ -23,3 +23,12 @@ int GetValueNullNatural(string text)
     return value;
 }
 
+int FillTwoArray(int[,] collection)
+{
+    int line =0;
+    int column=0;
+    for (int i = 0; i < collection.Length; i++)
+    {
+        
+    }
+}
