@@ -1,5 +1,7 @@
-﻿string enterN = "specify the number of array rows";
-string enterM = "specify the number of array columns";
+﻿// Показать двумерный массив размером m×n заполненный вещественными числами
+
+string enterM = "specify the number of array rows";
+string enterN = "specify the number of array columns";
 
 int GetValueNullNatural(string text)
 {
@@ -23,26 +25,36 @@ int GetValueNullNatural(string text)
     return value;
 }
 
-void CreateTwoDimensionalArray(int[,] massive)
+void FillTwoDimensionalArray(int[,] massive, int column, int line)
 {
-     = 0;
-    int line = 0;
     int constant = 1;
-    for (int coll = 0; coll < column; coll++)
+    for (int i = 0; i < line; i++)
     {
-        for (int i = 0; i < column; i++)
+        for (int iCol = 0; iCol < column; iCol++)
         {
-            collection[i, line] += constant;
+            massive[iCol, i] += constant;
+            constant++;
         }
     }
 }
 
-void PrintTwoArray(int[,] colleclion)
+void PrintTwoArray(int[,] massiveNumbers, int column, int line)
 {
     int indexColumn = 0;
-
+    for (int i = 0; i < line; i++)
+    {
+        for (int iCol = 0; iCol < column; iCol++)
+        {
+            System.Console.Write(massiveNumbers[iCol, i]);
+        }
+        System.Console.WriteLine();
+    }
 }
 
-CreateTwoDimensionalArray(GetValueNullNatural(enterN), GetValueNullNatural(enterM));
+int M =  GetValueNullNatural(enterM);
+int N =  GetValueNullNatural(enterN);
 
-int[,] array = 
+int[,] array = new int[M,N];
+
+FillTwoDimensionalArray(array, M, N);
+PrintTwoArray(array, M, N);
