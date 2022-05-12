@@ -45,7 +45,7 @@ void PrintTwoArray(int[,] massiveNumbers, int column, int line)
     {
         for (int iCol = 0; iCol < column; iCol++)
         {
-            System.Console.Write(massiveNumbers[iCol, i]);
+            System.Console.Write($"{massiveNumbers[iCol, i]} ");
         }
         System.Console.WriteLine();
     }
