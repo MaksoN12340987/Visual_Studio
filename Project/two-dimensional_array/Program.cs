@@ -40,7 +40,6 @@ void FillTwoDimensionalArray(int[,] massive, int column, int line)
 
 void PrintTwoArray(int[,] massiveNumbers, int column, int line)
 {
-    int indexColumn = 0;
     for (int i = 0; i < line; i++)
     {
         for (int iCol = 0; iCol < column; iCol++)
