@@ -147,9 +147,10 @@ void PrintArrayMaterial(double[] print)
     }
 }
 
-    int coll = System.Convert.ToInt32(GetValueNullNatural(enterMas));
-    int value = System.Convert.ToInt32(GetValueOptions(enterValue));
-    while (value != 4)
+
+int coll = System.Convert.ToInt32(GetValueNullNatural(enterMas));
+int value = System.Convert.ToInt32(GetValueOptions(enterValue));
+while (value != 4)
     {
         if (value == 1)
         {
@@ -186,5 +187,4 @@ void PrintArrayMaterial(double[] print)
         }
         value = System.Convert.ToInt32(GetValueOptions(enterValue));
     }
-    System.Console.WriteLine("Thank you!");
-
+System.Console.WriteLine("Thank you!");

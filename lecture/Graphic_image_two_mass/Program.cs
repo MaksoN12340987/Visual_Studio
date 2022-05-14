@@ -36,6 +36,9 @@ void PrintImages(int[,] massive)
     }
 }
 
-
+void ColarImages(int[,] massive)
+{
+    
+}
 
 PrintImages(images);
