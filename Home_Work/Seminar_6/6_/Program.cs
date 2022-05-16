@@ -36,9 +36,9 @@ void PrintTwoArray(int[,] massive)
 
 void FillTwoDimensionalArray(int[,] mass)
 {
-    1   2  3 4
-    10 11 12 5
-    9   8  7 6
+    // 1   2  3 4
+    // 10 11 12 5
+    // 9   8  7 6
 }
 
 void Main()

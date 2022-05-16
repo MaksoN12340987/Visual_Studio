@@ -119,20 +119,6 @@ string SearchNumber(int[,] matrix, int search)
     return total;
 }
 
-// int SumElementsMainDiagonal(int[,] mass)
-// {
-//     int i = mass.GetLength(0);// (arg1 - 1)(arg2 - 1) int arg1, int arg2
-//     int j = 0;
-//     int sumElements = 0;
-//     while(i != 0)
-//     {
-//         sumElements = sumElements + mass[i,j];
-//         j++;
-//         i--;
-//     }
-//     return sumElements;
-// }
-
 void Main()
 {
     string enterM = "specify the number of array rows";
@@ -171,13 +157,6 @@ void Main()
             int numberSearch = GetValueNullNatural(enterNumber);
             System.Console.WriteLine(SearchNumber(array, numberSearch));
         }
-        // if (value == 4)
-        // {
-        //     DateTime start = DateTime.Now;
-        //     System.Console.WriteLine(SumElementsMainDiagonal(array));
-        //     double running = (DateTime.Now - start).TotalMilliseconds;
-        //     System.Console.WriteLine($"Program_running_time: {running}");
-        // }
         value = GetValueOptions(enterValue, indicator);
     }
     System.Console.WriteLine("Thank you!");
