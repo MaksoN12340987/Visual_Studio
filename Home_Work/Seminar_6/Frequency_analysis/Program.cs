@@ -22,22 +22,22 @@ int GetValueNullNatural(string text)
     return value;
 }
 
-void FillTwoDimensionalArray(int[,] mass)
+void FillTwoDimensionalArray(int[,] mass, int rowsMass, int columnsMass)
 {
-    for (int i = 0; i < mass.GetLength(0); i++)
+    for (int i = 0; i < rowsMass; i++)
     {
-        for (int j = 0; j < mass.GetLength(1); j++)
+        for (int j = 0; j < columnsMass; j++)
         {
             mass[i, j] = new System.Random().Next(0, 10);
         }
     }
 }
 
-void PrintTwoArray(int[,] massive)
+void PrintTwoArray(int[,] massive, int rowsMass, int columnsMass)
 {
-    for (int i = 0; i < massive.GetLength(0); i++)
+    for (int i = 0; i < rowsMass; i++)
     {
-        for (int j = 0; j < massive.GetLength(1); j++)
+        for (int j = 0; j < columnsMass; j++)
         {
             System.Console.Write($"{massive[i, j]} ");
         }
@@ -45,25 +45,23 @@ void PrintTwoArray(int[,] massive)
     }
 }
 
-void FrequencyAnalysis(int[,] massive, string[] results)
+void FrequencyAnalysis(int[,] massive, int rowsMass, int columnsMass, string[] results)
 {
-    int rows = massive.GetLength(0);
-    int columns = massive.GetLength(1);
     int length = massive.Length;
     for (int z = 0; z < length; z++)
     {
         int k = 0;
-        for (int i = 0; i < rows; i++)
+        for (int i = 0; i < rowsMass; i++)
         {
 
-            for (int j = 0; j < columns; j++)
+            for (int j = 0; j < columnsMass; j++)
             {
                 double totalCount = 0;
                 int temporarily = massive[i, j];
                 double counter = 0;
-                for (int r = 0; r < rows; r++)
+                for (int r = 0; r < rowsMass; r++)
                 {
-                    for (int c = 0; c < columns; c++)
+                    for (int c = 0; c < columnsMass; c++)
                     {
                         if (temporarily == massive[r, c])
                         {
@@ -80,9 +78,8 @@ void FrequencyAnalysis(int[,] massive, string[] results)
     }
 }
 
-void ArrayIf(string[] collection)
+void ArrayIf(string[] collection, int length)
 {
-    int length = collection.Length;
     string[] temporarily = new string[length];
     for (int i = 0; i < length; i++)
     {
@@ -117,13 +114,19 @@ void Main()
 {
     string enterM = "specify the number of array rows";
     string enterN = "specify the number of array columns";
-    int[,] array = new int[GetValueNullNatural(enterM), GetValueNullNatural(enterN)];
-    string[] analysis = new string[array.Length];
-    FillTwoDimensionalArray(array);
-    FrequencyAnalysis(array, analysis);
-    PrintTwoArray(array);
-    ArrayIf(analysis);
+    int rows = GetValueNullNatural(enterM);
+    int columns = GetValueNullNatural(enterN);
+    DateTime start = DateTime.Now;
+    int[,] array = new int[rows, columns];
+    int col = array.Length;
+    string[] analysis = new string[col];
+    FillTwoDimensionalArray(array, rows, columns);
+    FrequencyAnalysis(array, rows, columns, analysis);
+    PrintTwoArray(array, rows, columns);
+    ArrayIf(analysis, col);
     PrintArrayIf(analysis);
+    double running = (DateTime.Now - start).TotalMilliseconds;
+    System.Console.WriteLine($"Program_running_time: {running}");
 }
 
 Main();
