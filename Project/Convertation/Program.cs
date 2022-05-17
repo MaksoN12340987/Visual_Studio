@@ -24,19 +24,20 @@ int GetValueNullNatural(string text)
     return value;
 }
 
-int ConvertBinarySystem(int numer)
+int ConvertBinarySystem(int number)
 {
     int total = 0;
     if (number < 10)
     {
-        total = numer % 2;
+        total = number % 2;
     }
     else
     {
-        for (int i = 0; i < numer; i++)
+        for (int i = 0; i < number; i++)
         {
-            total = (numer % 2) *10;
+            total = (number % 2) *10;
         }
     }
     return total;
 }
+
