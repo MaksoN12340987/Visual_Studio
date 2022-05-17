@@ -22,6 +22,8 @@ int GetValueNullNatural(string text)
     return value;
 }
 
+// 11
+
 void PrintTwoArray(int[,] massive)
 {
     for (int i = 0; i < massive.GetLength(0); i++)
