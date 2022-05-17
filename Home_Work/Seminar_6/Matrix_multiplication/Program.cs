@@ -48,11 +48,11 @@ void AdditionMatrix(int[,] matrix1, int arg1, int arg2, int[,] matrix2, int arg4
     }
 } 
 
-void FillTwoDimensionalArray(int[,] mass)
+void FillTwoDimensionalArray(int[,] mass, int arg1, int arg2)
 {
-    for (int i = 0; i < mass.GetLength(0); i++)
+    for (int i = 0; i < arg1; i++)
     {
-        for (int j = 0; j < mass.GetLength(1); j++)
+        for (int j = 0; j < arg2; j++)
         {
             mass[i, j] = new System.Random().Next(0, 10);
         }
@@ -72,16 +72,23 @@ void Main()
     int M3 = GetValueNullNatural(enterM3);
     int N4 = GetValueNullNatural(enterN4);
 
-    int[,] array1 = new int[M1, N2];
-    int[,] array2 = new int[M3, N4];
-    FillTwoDimensionalArray(array1);
-    FillTwoDimensionalArray(array2);
-    int[,] total = new int[M1, N4];
-
-    AdditionMatrix(array1, M1, N2, array2, N4, total);
-    PrintTwoArray(array1, M1, N2);
-    PrintTwoArray(array2, M3, N4);
-    PrintTwoArray(total, M1, N4);
+    if (N2 == M3)
+    {
+        int[,] array1 = new int[M1, N2];
+        int[,] array2 = new int[M3, N4];
+        FillTwoDimensionalArray(array1, M1, N2);
+        FillTwoDimensionalArray(array2, M3, N4);
+        int[,] total = new int[M1, N4];
+    
+        AdditionMatrix(array1, M1, N2, array2, N4, total);
+        PrintTwoArray(array1, M1, N2);
+        PrintTwoArray(array2, M3, N4);
+        PrintTwoArray(total, M1, N4);
+    }
+    else
+    {
+        System.Console.WriteLine("Matrices cannot be multiplied(((");
+    }
 }
 
 Main();

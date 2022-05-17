@@ -22,6 +22,17 @@ int GetValueNullNatural(string text)
     return value;
 }
 
+void FillTwoDimensionalArray(int[,] mass)
+{
+    for (int i = 0; i < mass.GetLength(0); i++)
+    {
+        for (int j = 0; j < mass.GetLength(1); j++)
+        {
+            mass[i, j] = new System.Random().Next(0, 10);
+        }
+    }
+}
+
 void PrintTwoArray(int[,] massive)
 {
     for (int i = 0; i < massive.GetLength(0); i++)
@@ -44,24 +55,24 @@ void FrequencyAnalysis(int[,] massive, string[] results)
         int k = 0;
         for (int i = 0; i < rows; i++)
         {
-            
+
             for (int j = 0; j < columns; j++)
             {
                 double totalCount = 0;
-                int temporarily = massive[i,j];
+                int temporarily = massive[i, j];
                 double counter = 0;
                 for (int r = 0; r < rows; r++)
                 {
                     for (int c = 0; c < columns; c++)
                     {
-                        if (temporarily == massive[r,c])
+                        if (temporarily == massive[r, c])
                         {
                             counter++;
                         }
                     }
                 }
                 totalCount = (counter / length) * 100;
-                results[k] =$"Элемент: {temporarily} встречается с частотой: {Math.Round(totalCount, 2)} %";
+                results[k] = $"Элемент: {temporarily} повторяется с вероятностью: {Math.Round(totalCount, 2)} %";
                 k++;
             }
         }
@@ -69,42 +80,35 @@ void FrequencyAnalysis(int[,] massive, string[] results)
     }
 }
 
-void PrintArray(int[] print)
+void ArrayIf(string[] collection)
 {
-    for (int i = 0; i < print.Length; i++)
-    {
-        System.Console.Write($"{print[i]}, ");
-    }
-}
-
-void PrintArrayIf(string[] massEnter)
-{
-    int length = massEnter.Length;
+    int length = collection.Length;
+    string[] temporarily = new string[length];
     for (int i = 0; i < length; i++)
     {
-        System.Console.WriteLine(massEnter[i]);
-        string temp = massEnter[i];
-        for (int j = 0; j < length; j++)
+        temporarily[i] = collection[i];
+        int counter = 0;
+        for (int r = 0; r < length; r++)
         {
-            System.Console.WriteLine($"         ------------{massEnter[j]}");
-            System.Console.WriteLine($"         {temp}");
-            if (temp == massEnter[j])
+            if (temporarily[r] == collection[i])
             {
-                
-                massEnter[i] = string.Empty;
+                counter++;
             }
-            
+            if (counter > 1)
+            {
+                collection[i] = String.Empty;
+            }
         }
     }
 }
 
-void FillTwoDimensionalArray(int[,] mass)
+void PrintArrayIf(string[] print)
 {
-    for (int i = 0; i < mass.GetLength(0); i++)
+    for (int i = 0; i < print.Length; i++)
     {
-        for (int j = 0; j < mass.GetLength(1); j++)
+        if (print[i] != String.Empty)
         {
-            mass[i, j] = new System.Random().Next(0, 10);
+            System.Console.WriteLine(print[i]);
         }
     }
 }
@@ -118,6 +122,7 @@ void Main()
     FillTwoDimensionalArray(array);
     FrequencyAnalysis(array, analysis);
     PrintTwoArray(array);
+    ArrayIf(analysis);
     PrintArrayIf(analysis);
 }
 
