@@ -38,17 +38,18 @@ void FrequencyAnalysis(int[,] massive, string[] results)
 {
     int rows = massive.GetLength(0);
     int columns = massive.GetLength(1);
-    int k = 0;
-    for (int z = 0; z < massive.Length; z++)
+    int length = massive.Length;
+    for (int z = 0; z < length; z++)
     {
+        int k = 0;
         for (int i = 0; i < rows; i++)
         {
             
             for (int j = 0; j < columns; j++)
             {
-                int totalCount = 0;
+                double totalCount = 0;
                 int temporarily = massive[i,j];
-                int counter = 0;
+                double counter = 0;
                 for (int r = 0; r < rows; r++)
                 {
                     for (int c = 0; c < columns; c++)
@@ -59,8 +60,8 @@ void FrequencyAnalysis(int[,] massive, string[] results)
                         }
                     }
                 }
-                totalCount = (counter / massive.Length) * 100;
-                results[k] =$"Элемент: {temporarily} встречается с частотой: {totalCount}";
+                totalCount = (counter / length) * 100;
+                results[k] =$"Элемент: {temporarily} встречается с частотой: {Math.Round(totalCount, 2)} %";
                 k++;
             }
         }
@@ -68,7 +69,7 @@ void FrequencyAnalysis(int[,] massive, string[] results)
     }
 }
 
-void PrintArray(string[] print)
+void PrintArray(int[] print)
 {
     for (int i = 0; i < print.Length; i++)
     {
@@ -76,23 +77,48 @@ void PrintArray(string[] print)
     }
 }
 
+void PrintArrayIf(string[] massEnter)
+{
+    int length = massEnter.Length;
+    for (int i = 0; i < length; i++)
+    {
+        System.Console.WriteLine(massEnter[i]);
+        string temp = massEnter[i];
+        for (int j = 0; j < length; j++)
+        {
+            System.Console.WriteLine($"         ------------{massEnter[j]}");
+            System.Console.WriteLine($"         {temp}");
+            if (temp == massEnter[j])
+            {
+                
+                massEnter[i] = string.Empty;
+            }
+            
+        }
+    }
+}
+
+void FillTwoDimensionalArray(int[,] mass)
+{
+    for (int i = 0; i < mass.GetLength(0); i++)
+    {
+        for (int j = 0; j < mass.GetLength(1); j++)
+        {
+            mass[i, j] = new System.Random().Next(0, 10);
+        }
+    }
+}
+
 void Main()
 {
-    // string enterM = "specify the number of array rows";
-    // string enterN = "specify the number of array columns";
-    // int M = GetValueNullNatural(enterM);
-    // int N = GetValueNullNatural(enterN);
-    // int[,] array = new int[GetValueNullNatural(enterM), GetValueNullNatural(enterN)];
-    int[,] array = new int[,]{
-        {1, 2, 3},
-        {4, 5, 6},
-        {7, 8, 9},
-    };
+    string enterM = "specify the number of array rows";
+    string enterN = "specify the number of array columns";
+    int[,] array = new int[GetValueNullNatural(enterM), GetValueNullNatural(enterN)];
     string[] analysis = new string[array.Length];
+    FillTwoDimensionalArray(array);
     FrequencyAnalysis(array, analysis);
     PrintTwoArray(array);
-    PrintArray(analysis);
-
+    PrintArrayIf(analysis);
 }
 
 Main();
