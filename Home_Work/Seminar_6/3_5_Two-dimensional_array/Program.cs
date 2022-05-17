@@ -148,9 +148,9 @@ void Main()
     string enterM = "specify the number of array rows";
     string enterN = "specify the number of array columns";
     string enterValue = "";
-    int M = GetValueNullNatural(enterM);
-    int N = GetValueNullNatural(enterN);
-    int[,] array = new int[M,N];
+    // int M = GetValueNullNatural(enterM);
+    // int N = GetValueNullNatural(enterN);
+    int[,] array = new int[GetValueNullNatural(enterM),GetValueNullNatural(enterN)];
     FillTwoDimensionalArray(array);
     PrintTwoArray(array);
     int value = System.Convert.ToInt32(GetValueOptions(enterValue));
