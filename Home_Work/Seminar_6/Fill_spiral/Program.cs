@@ -34,13 +34,30 @@ void PrintTwoArray(int[,] massive)
     }
 }
 
-void FillTwoDimensionalArray(int[,] mass)
+void FillTwoDimensionalArray(int[,] mass, int rows, int columns, int amount)
 {
     // 1   2  3 4
     // 12 13 14 5
     // 11 16 15 6
     // 10  9 8  7
-    
+    int k = 0;
+    int value = 1;
+    int counter = 0;
+    for (int i = 0; i < amount; i++)
+    {
+        if (counter == 0)
+        {
+            while (k < rows)
+            {
+                for (int j = 0; j < rows; j++)
+                {
+                    mass[k, j] += value;
+                }
+            }
+        }
+
+
+    }
 }
 
 void Main()
@@ -50,6 +67,7 @@ void Main()
     int M = GetValueNullNatural(enterM);
     int N = GetValueNullNatural(enterN);
     int[,] array = new int[M, N];
-    
-    PrintTwoArray(array);
+    int col = array.Length;
+
+    PrintTwoArray(array, M, N, col);
 }
