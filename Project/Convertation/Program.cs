@@ -1,6 +1,6 @@
 ﻿// Написать программу преобразования десятичного числа в двоичное
 
-string enterM = "specify the number of array rows";
+
 
 int GetValueNullNatural(string text)
 {
@@ -41,3 +41,11 @@ int ConvertBinarySystem(int number)
     return total;
 }
 
+void Main()
+{
+    string enter = "specify the number of array rows";
+    int value = GetValueNullNatural(enter);
+    ConvertBinarySystem(value);
+}
+
+Main();
