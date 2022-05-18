@@ -38,32 +38,32 @@ void FillTwoDimensionalArray(int[,] mass, int rows, int columns, int amount)
 {
     int x = 0, y = 0, z = 1;
 
-    while (x < amount) /*Цикл по номеру витка*/
+    while (x < amount)
     {
         y++;
         for (int j = y - 1; j < columns - y + 1; j++)
         {
             mass[y - 1, j] = z++;
             x++;
-        }   /*Определение значений верхнего гор столбца*/
+        }
 
         for (int j = y; j < rows - y + 1; j++)
         {
             mass[j, columns - y] = z++;
             x++;
-        }   /* --//-- По правому вертикальному столбцу*/
+        }
 
         for (int j = columns - y - 1; j >= y - 1; j--)
         {
             mass[rows - y, j] = z++;
             x++;
-        }   /* --//-- по нижнему горизонтальному столбцу*/
+        }
 
         for (int j = rows - y - 1; j >= y; j--)
         {
             mass[j, y - 1] = z++;
             x++;
-        }   /* --//-- по левому вертикальному столбцу*/
+        }
 
     }
     // -------------------------------------
@@ -84,17 +84,17 @@ void FillTwoDimensionalArray(int[,] mass, int rows, int columns, int amount)
     //         mass[b, columns] += value;
     //     }
     //     x = columns;
-    //     // while (x > y)
-    //     // {
-    //     //     mass[rows, x] += value;
-    //     //     x--;
-    //     // }
-    //     // z = rows;
-    //     // while (z > k)
-    //     // {
-    //     //     mass[z, x] += value;
-    //     //     z--;
-    //     // }
+    //     while (x > y)
+    //     {
+    //         mass[rows, x] += value;
+    //         x--;
+    //     }
+    //     z = rows;
+    //     while (z > k)
+    //     {
+    //         mass[z, x] += value;
+    //         z--;
+    //     }
     //     x++;
     //     y++;
     //     k++;
