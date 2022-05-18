@@ -22,11 +22,11 @@ int GetValueNullNatural(string text)
     return value;
 }
 
-void PrintTwoArray(int[,] massive)
+void PrintTwoArray(int[,] massive, int rows, int columns)
 {
-    for (int i = 0; i < massive.GetLength(0); i++)
+    for (int i = 0; i < rows; i++)
     {
-        for (int j = 0; j < massive.GetLength(1); j++)
+        for (int j = 0; j < columns; j++)
         {
             System.Console.Write($"{massive[i, j]} ");
         }
@@ -36,28 +36,71 @@ void PrintTwoArray(int[,] massive)
 
 void FillTwoDimensionalArray(int[,] mass, int rows, int columns, int amount)
 {
-    // 1   2  3 4
-    // 12 13 14 5
-    // 11 16 15 6
-    // 10  9 8  7
-    int k = 0;
-    int value = 1;
-    int counter = 0;
-    for (int i = 0; i < amount; i++)
-    {
-        if (counter == 0)
-        {
-            while (k < rows)
-            {
-                for (int j = 0; j < rows; j++)
-                {
-                    mass[k, j] += value;
-                }
-            }
-        }
+    int x = 0, y = 0, z = 1;
 
+    while (x < amount) /*Цикл по номеру витка*/
+    {
+        y++;
+        for (int j = y - 1; j < columns - y + 1; j++)
+        {
+            mass[y - 1, j] = z++;
+            x++;
+        }   /*Определение значений верхнего гор столбца*/
+
+        for (int j = y; j < rows - y + 1; j++)
+        {
+            mass[j, columns - y] = z++;
+            x++;
+        }   /* --//-- По правому вертикальному столбцу*/
+
+        for (int j = columns - y - 1; j >= y - 1; j--)
+        {
+            mass[rows - y, j] = z++;
+            x++;
+        }   /* --//-- по нижнему горизонтальному столбцу*/
+
+        for (int j = rows - y - 1; j >= y; j--)
+        {
+            mass[j, y - 1] = z++;
+            x++;
+        }   /* --//-- по левому вертикальному столбцу*/
 
     }
+    // -------------------------------------
+    // int k = 1;
+    // int x =0;
+    // int y =0;
+    // int z = rows;
+    // int value = 1;
+    // int counter = mass.Length / 4;
+    // for (int i = 0; i < counter; i++)
+    // {
+    //     for (int a = x; a < columns; a++)
+    //     {
+    //         mass[x, a] += value;
+    //     }
+    //     for (int b = y; b < rows; b++)
+    //     {
+    //         mass[b, columns] += value;
+    //     }
+    //     x = columns;
+    //     // while (x > y)
+    //     // {
+    //     //     mass[rows, x] += value;
+    //     //     x--;
+    //     // }
+    //     // z = rows;
+    //     // while (z > k)
+    //     // {
+    //     //     mass[z, x] += value;
+    //     //     z--;
+    //     // }
+    //     x++;
+    //     y++;
+    //     k++;
+    //     columns--;
+    //     rows--;
+    // }
 }
 
 void Main()
@@ -68,6 +111,8 @@ void Main()
     int N = GetValueNullNatural(enterN);
     int[,] array = new int[M, N];
     int col = array.Length;
-
-    PrintTwoArray(array, M, N, col);
+    FillTwoDimensionalArray(array, M, N, col);
+    PrintTwoArray(array, M, N);
 }
+
+Main();
