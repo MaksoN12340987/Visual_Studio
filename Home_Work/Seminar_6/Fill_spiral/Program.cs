@@ -36,35 +36,31 @@ void PrintTwoArray(int[,] massive, int rows, int columns)
 
 void FillTwoDimensionalArray(int[,] mass, int rows, int columns, int amount)
 {
-    int x = 0, y = 0, z = 1;
+    int count = 0, k = 0, z = 1;
 
-    while (x < amount)
+    while (count < amount)
     {
-        y++;
-        for (int j = y - 1; j < columns - y + 1; j++)
+        k++;
+        for (int a = k - 1; a < columns - k + 1; a++)
         {
-            mass[y - 1, j] = z++;
-            x++;
+            mass[k - 1, a] = z++;
+            count++;
         }
-
-        for (int j = y; j < rows - y + 1; j++)
+        for (int b = k; b < rows - k + 1; b++)
         {
-            mass[j, columns - y] = z++;
-            x++;
+            mass[b, columns - k] = z++;
+            count++;
         }
-
-        for (int j = columns - y - 1; j >= y - 1; j--)
+        for (int c = columns - k - 1; c >= k - 1; c--)
         {
-            mass[rows - y, j] = z++;
-            x++;
+            mass[rows - k, c] = z++;
+            count++;
         }
-
-        for (int j = rows - y - 1; j >= y; j--)
+        for (int d = rows - k - 1; d >= k; d--)
         {
-            mass[j, y - 1] = z++;
-            x++;
+            mass[d, k - 1] = z++;
+            count++;
         }
-
     }
     // -------------------------------------
     // int k = 1;
