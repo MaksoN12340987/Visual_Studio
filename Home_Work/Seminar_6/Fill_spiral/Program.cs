@@ -62,41 +62,6 @@ void FillTwoDimensionalArray(int[,] mass, int rows, int columns, int amount)
             count++;
         }
     }
-    // -------------------------------------
-    // int k = 1;
-    // int x =0;
-    // int y =0;
-    // int z = rows;
-    // int value = 1;
-    // int counter = mass.Length / 4;
-    // for (int i = 0; i < counter; i++)
-    // {
-    //     for (int a = x; a < columns; a++)
-    //     {
-    //         mass[x, a] += value;
-    //     }
-    //     for (int b = y; b < rows; b++)
-    //     {
-    //         mass[b, columns] += value;
-    //     }
-    //     x = columns;
-    //     while (x > y)
-    //     {
-    //         mass[rows, x] += value;
-    //         x--;
-    //     }
-    //     z = rows;
-    //     while (z > k)
-    //     {
-    //         mass[z, x] += value;
-    //         z--;
-    //     }
-    //     x++;
-    //     y++;
-    //     k++;
-    //     columns--;
-    //     rows--;
-    // }
 }
 
 void Main()
