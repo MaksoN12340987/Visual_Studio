@@ -1,7 +1,7 @@
 ﻿// Array print method
 
 // one-dimensional array
-string PrintArrayIf(string[] printarray)
+string PrintArray(string[] printarray)
 {
     string print = string.Empty;
     for (int i = 0; i < printarray.Length; i++)
