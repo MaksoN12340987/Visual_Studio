@@ -33,16 +33,18 @@ void FillTwoDimensionalArray(int[,] mass, int rowsMass, int columnsMass)
     }
 }
 
-void PrintTwoArray(int[,] massive, int rowsMass, int columnsMass)
+string PrintTwoArray(int[,] massive, int rowsMass, int columnsMass)
 {
+    string print = string.Empty;
     for (int i = 0; i < rowsMass; i++)
     {
         for (int j = 0; j < columnsMass; j++)
         {
-            System.Console.Write($"{massive[i, j]} ");
+            print += $"{massive[i, j]} ";
         }
-        System.Console.WriteLine();
+        print += System.Environment.NewLine;
     }
+    return print;
 }
 
 void FrequencyAnalysis(int[,] massive, int rowsMass, int columnsMass, string[] results)
@@ -78,7 +80,7 @@ void FrequencyAnalysis(int[,] massive, int rowsMass, int columnsMass, string[] r
     }
 }
 
-void ArrayIf(string[] collection, int length)
+void ArraySampleIdentical(string[] collection, int length)
 {
     string[] temporarily = new string[length];
     for (int i = 0; i < length; i++)
@@ -99,15 +101,18 @@ void ArrayIf(string[] collection, int length)
     }
 }
 
-void PrintArrayIf(string[] print)
+string PrintArrayIf(string[] printarray)
 {
-    for (int i = 0; i < print.Length; i++)
+    string print = string.Empty;
+    for (int i = 0; i < printarray.Length; i++)
     {
-        if (print[i] != String.Empty)
+        if (printarray[i] != String.Empty)
         {
-            System.Console.WriteLine(print[i]);
+            print += $"{printarray[i]}";
+            print += System.Environment.NewLine;
         }
     }
+    return print;
 }
 
 void Main()
@@ -116,17 +121,26 @@ void Main()
     string enterN = "specify the number of array columns";
     int rows = GetValueNullNatural(enterM);
     int columns = GetValueNullNatural(enterN);
+
     DateTime start = DateTime.Now;
     int[,] array = new int[rows, columns];
     int col = array.Length;
     string[] analysis = new string[col];
+
     FillTwoDimensionalArray(array, rows, columns);
-    FrequencyAnalysis(array, rows, columns, analysis);
-    PrintTwoArray(array, rows, columns);
-    ArrayIf(analysis, col);
-    PrintArrayIf(analysis);
+    // Время заполнения массива
     double running = (DateTime.Now - start).TotalMilliseconds;
-    System.Console.WriteLine($"Program_running_time: {running}");
+    System.Console.WriteLine($"Время заполнения массива Program_running_time: {running}");
+
+    start = DateTime.Now;
+    FrequencyAnalysis(array, rows, columns, analysis);
+    System.Console.WriteLine(PrintTwoArray(array, rows, columns));
+    // Время выполнения анализа
+    running = (DateTime.Now - start).TotalMilliseconds;
+    System.Console.WriteLine($"Время выполнения анализа Program_running_time: {running}");
+
+    ArraySampleIdentical(analysis, col);
+    System.Console.WriteLine(PrintArrayIf(analysis));
 }
 
 Main();
