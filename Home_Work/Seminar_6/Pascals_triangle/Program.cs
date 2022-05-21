@@ -137,11 +137,11 @@ void PrintTwoArraySecret(int[,] massive, int rowsMass, int columnsMass, int leng
         {
             if (massive[i, j] % 2 != 0)
             {
-                System.Console.Write(" $ ");
+                System.Console.Write("$");
             }
             else
             {
-                System.Console.Write("   ");
+                System.Console.Write(" ");
             }
         }
         height++;

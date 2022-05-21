@@ -28,7 +28,7 @@ void FillTwoDimensionalArray(int[,] mass, int rowsMass, int columnsMass)
     {
         for (int j = 0; j < columnsMass; j++)
         {
-            mass[i, j] = new System.Random().Next(0, 10);
+            mass[i, j] = new System.Random().Next(0, 100);
         }
     }
 }
@@ -55,7 +55,6 @@ void FrequencyAnalysis(int[,] massive, int rowsMass, int columnsMass, string[] r
         int k = 0;
         for (int i = 0; i < rowsMass; i++)
         {
-
             for (int j = 0; j < columnsMass; j++)
             {
                 double totalCount = 0;
@@ -72,11 +71,10 @@ void FrequencyAnalysis(int[,] massive, int rowsMass, int columnsMass, string[] r
                     }
                 }
                 totalCount = (counter / length) * 100;
-                results[k] = $"Элемент: {temporarily} повторяется с вероятностью: {Math.Round(totalCount, 2)} %";
+                results[k] = $"Element: {temporarily} frequency: {Math.Round(totalCount, 2)} %";
                 k++;
             }
         }
-
     }
 }
 
@@ -108,7 +106,7 @@ string PrintArrayIf(string[] printarray)
     {
         if (printarray[i] != String.Empty)
         {
-            print += $"{printarray[i]}";
+            print += $"{printarray[i], 3}";
             print += System.Environment.NewLine;
         }
     }
@@ -126,18 +124,12 @@ void Main()
     int[,] array = new int[rows, columns];
     int col = array.Length;
     string[] analysis = new string[col];
-
     FillTwoDimensionalArray(array, rows, columns);
-    // Время заполнения массива
-    double running = (DateTime.Now - start).TotalMilliseconds;
-    System.Console.WriteLine($"Время заполнения массива Program_running_time: {running}");
 
-    start = DateTime.Now;
     FrequencyAnalysis(array, rows, columns, analysis);
     System.Console.WriteLine(PrintTwoArray(array, rows, columns));
-    // Время выполнения анализа
-    running = (DateTime.Now - start).TotalMilliseconds;
-    System.Console.WriteLine($"Время выполнения анализа Program_running_time: {running}");
+    double running = (DateTime.Now - start).TotalMilliseconds;
+    System.Console.WriteLine($"Frequency analysis running time: {running}");
 
     ArraySampleIdentical(analysis, col);
     System.Console.WriteLine(PrintArrayIf(analysis));
