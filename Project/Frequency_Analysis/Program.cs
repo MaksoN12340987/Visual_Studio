@@ -1,31 +1,25 @@
-﻿void FrequencyAnalysis(string[,] massive, int rowsMass, int columnsMass, string[] results)
+﻿void FrequencyAnalysisString(string collection, int length, string[] results)
 {
-    int length = massive.Length;
-    for (int z = 0; z < length; z++)
+    int k = 0;
+    for (int i = 0; i < length; i++)
     {
-        int k = 0;
-        for (int i = 0; i < rowsMass; i++)
+        double totalCount = 0;
+        var temporarily = collection[i];
+        double counter = 0;
+        for (int c = 0; c < length; c++)
         {
-            for (int j = 0; j < columnsMass; j++)
+            if (temporarily == collection[c])
             {
-                double totalCount = 0;
-                var temporarily = massive[i, j];
-                double counter = 0;
-                for (int r = 0; r < rowsMass; r++)
-                {
-                    for (int c = 0; c < columnsMass; c++)
-                    {
-                        if (temporarily == massive[r, c])
-                        {
-                            counter++;
-                        }
-                    }
-                }
-                totalCount = (counter / length) * 100;
-                results[k] = $"Элемент: {temporarily} повторяется с вероятностью: {Math.Round(totalCount, 2)} %";
-                k++;
+                counter++;
             }
         }
+        if (true)
+        {
+            
+        }
+        totalCount = (counter / length) * 100;
+        results[k] = $"Элемент: {(temporarily)} повторяется с вероятностью: {Math.Round(totalCount, 2)} %";
+        k++;
     }
 }
 
@@ -71,17 +65,26 @@ void Main()
     {"M", "a", "k", "s", "i", "m", "1", "1", "1"},
     {"M", "a", "k", "s", "i", "m", "2", "1", "2"}
     };
-
-    int rows = arr.GetLength(0);
-    int columns = arr.GetLength(1);
-    int col = arr.Length;
+    System.Console.WriteLine();
+    string text = "Частотный анализ – это один из методов криптоанализа, основывающийся на предположении о ";
+    text += "существовании нетривиального статистического распределения отдельных символов и их ";
+    text += "последовательностей как в открытом тексте, так и шифрованном тексте, которое с точностью до замены ";
+    text += "символов будет сохраняться в процессе шифрования и дешифрования. ";
+    text += "Частотный анализ может выглядеть так";
+    System.Console.WriteLine(text);
+    System.Console.WriteLine();
+    int rows = text.Length;
+    int col = text.Length;
     string[] analysis = new string[col];
 
-    FrequencyAnalysis(arr, rows, columns, analysis);
-    // Время выполнения анализа
-    double running = (DateTime.Now - start).TotalMilliseconds;
-    System.Console.WriteLine($"Время выполнения анализа Program_running_time: {running}");
+    // FrequencyAnalysis(arr, rows, columns, analysis);
+    // // Время выполнения анализа
+    // double running = (DateTime.Now - start).TotalMilliseconds;
+    // System.Console.WriteLine($"Время выполнения анализа Program_running_time: {running}");
 
+    // ArraySampleIdentical(analysis, col);
+    // System.Console.WriteLine(PrintArrayIf(analysis));
+    FrequencyAnalysisString(text, col, analysis);
     ArraySampleIdentical(analysis, col);
     System.Console.WriteLine(PrintArrayIf(analysis));
 }
