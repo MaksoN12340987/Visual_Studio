@@ -66,34 +66,21 @@ string PrintArrayIf(string[] printarray)
 
 void Main()
 {
-    // string enterM = "specify the number of array rows";
-    // string enterN = "specify the number of array columns";
-    // int rows = GetValueNullNatural(enterM);
-    // int columns = GetValueNullNatural(enterN);
-
+    DateTime start = DateTime.Now;
     string[,] arr = new string[,]{
     {"M", "a", "k", "s", "i", "m", "1", "1", "1"},
     {"M", "a", "k", "s", "i", "m", "2", "1", "2"}
     };
 
-    // DateTime start = DateTime.Now;
-    // int[,] array = new int[rows, columns];
     int rows = arr.GetLength(0);
     int columns = arr.GetLength(1);
     int col = arr.Length;
     string[] analysis = new string[col];
 
-    // FillTwoDimensionalArray(array, rows, columns);
-    // // Время заполнения массива
-    // double running = (DateTime.Now - start).TotalMilliseconds;
-    // System.Console.WriteLine($"Время заполнения массива Program_running_time: {running}");
-
-    // start = DateTime.Now;
     FrequencyAnalysis(arr, rows, columns, analysis);
-    // System.Console.WriteLine(PrintTwoArray(arr, rows, columns));
     // Время выполнения анализа
-    // running = (DateTime.Now - start).TotalMilliseconds;
-    // System.Console.WriteLine($"Время выполнения анализа Program_running_time: {running}");
+    double running = (DateTime.Now - start).TotalMilliseconds;
+    System.Console.WriteLine($"Время выполнения анализа Program_running_time: {running}");
 
     ArraySampleIdentical(analysis, col);
     System.Console.WriteLine(PrintArrayIf(analysis));
