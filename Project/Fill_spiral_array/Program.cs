@@ -1,7 +1,4 @@
 ﻿int[,] Arr = new int[0,0];
-int n = 5;
-int m = 4;
-
 int i = 0, j, k = 0, p = 1;
 
 while (i < n * m) /*Цикл по номеру витка*/
