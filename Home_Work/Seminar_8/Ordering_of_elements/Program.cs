@@ -29,7 +29,7 @@ void FillTwoDimensionalArray(int[,] mass, int arg1, int arg2)
     {
         for (int j = 0; j < arg2; j++)
         {
-            mass[i, j] = new System.Random().Next(0, 10);
+            mass[i, j] = new System.Random().Next(0, 100);
         }
     }
 }
@@ -41,7 +41,7 @@ string PrintTwoArray(int[,] array, int rowsMass, int columnsMass)
     {
         for (int j = 0; j < columnsMass; j++)
         {
-            print += $"{array[i, j]} ";
+            print += $"{array[i, j], 2} ";
         }
         print += System.Environment.NewLine;
     }
