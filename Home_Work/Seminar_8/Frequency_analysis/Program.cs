@@ -40,7 +40,7 @@ string PrintTwoArray(int[,] array, int rows, int columns)
     {
         for (int j = 0; j < columns; j++)
         {
-            print += $"{array[i, j]} ";
+            print += $"{array[i, j], 2} ";
         }
         print += System.Environment.NewLine;
     }
@@ -57,7 +57,6 @@ void FrequencyAnalysis(int[,] array, int rows, int columns, string[] results)
         {
             for (int j = 0; j < columns; j++)
             {
-                double totalCount = 0;
                 int temporarily = array[i, j];
                 double counter = 0;
                 for (int r = 0; r < rows; r++)
@@ -70,8 +69,7 @@ void FrequencyAnalysis(int[,] array, int rows, int columns, string[] results)
                         }
                     }
                 }
-                totalCount = (counter / length) * 100;
-                results[k] = $"Element: {temporarily, 2} frequency: {Math.Round(totalCount, 2), 3} %";
+                results[k] = $"Element: {temporarily, 2} frequency: {counter, 3} times";
                 k++;
             }
         }

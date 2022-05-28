@@ -3,7 +3,6 @@
     int k = 0;
     for (int i = 0; i < length; i++)
     {
-        double totalCount = 0;
         var temporarily = collection[i];
         double counter = 0;
         for (int c = 0; c < length; c++)
@@ -13,12 +12,7 @@
                 counter++;
             }
         }
-        if (true)
-        {
-            
-        }
-        totalCount = (counter / length) * 100;
-        results[k] = $"Элемент: {(temporarily)} повторяется с вероятностью: {Math.Round(totalCount, 2)} %";
+        results[k] = $"Элемент: {(temporarily)} повторяется {counter, 3} раз";
         k++;
     }
 }
@@ -62,7 +56,15 @@ void Main()
 {
     DateTime start = DateTime.Now;
     
-    string text = @"A:\ФАЙЛЫ\Visual_Studio\C#\Project\Frequency_Analysis\text.txt";
+    string text = "Класс Task представляет собой одну операцию, которая не возвращает значение и ";
+    text += "обычно выполняется асинхронно. Taskобъекты являются одним из центральных компонентов ";
+    text += "асинхронного шаблона на основе задач, впервые появившиеся в платформа .NET Framework 4. ";
+    text += "Так как работа, выполняемая Task объектом, ";
+    text += "обычно выполняется асинхронно в потоке пула потоков, ";
+    text += "а не синхронно в основном потоке приложения, можно использовать Status свойство, ";
+    text += "а также IsCanceledIsCompletedсвойства и IsFaulted свойства ";
+    text += "для определения состояния задачи. ";
+    text += "Чаще всего лямбда-выражение используется для указания работы, выполняемой задачей.";
     int col = text.Length;
     string[] analysis = new string[col];
 
