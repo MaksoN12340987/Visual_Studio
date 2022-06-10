@@ -1,7 +1,11 @@
 ﻿// Array print method
 
+int[] array = new int[0];
+int[,] array1 = new int[0,0];
+int m = 0, n = 0;
+
 // one-dimensional array
-string PrintArray(string[] printarray)
+string PrintArray(int[] printarray)
 {
     string print = string.Empty;
     for (int i = 0; i < printarray.Length; i++)
@@ -28,3 +32,7 @@ string PrintTwoArray(int[,] massive, int rowsMass, int columnsMass)
 }
 
 // N-dimensional array
+
+
+System.Console.WriteLine(PrintArray(array));
+System.Console.WriteLine(PrintTwoArray(array1, m, n));
